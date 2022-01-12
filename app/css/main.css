@@ -8,20 +8,26 @@
 
 body{
   font-family: bebas;
+  height: 100%;
 }
 
-.header , .footer {
+
+
+.header, .footer {
   background-color: #ec1d24;
   height:var(--defaultHeight);
 }
 
+
 .main-section{
-  height: calc(100vh - (2 * var(--defaultHeight)));
+  /* height: calc(100vh - (2 * var(--defaultHeight))); */
   background: linear-gradient(to bottom, #1f1f1f, #1b1a1a);
+  overflow-y: auto;
 }
 
 .search-bar{
   background-color: #e5e5e5;
+  height: 50px;
 }
 
 .input-container{
@@ -57,4 +63,15 @@ body{
   padding: 5px 20px;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
+}
+
+/* commom */
+.w-full{
+  width: 100%;
+}
+
+/* bootstrap */
+
+.card{
+  max-width: 240px;
 }
