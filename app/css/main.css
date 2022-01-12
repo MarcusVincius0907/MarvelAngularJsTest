@@ -80,7 +80,8 @@ body, html{
 }
 
 .container-profile{
-  max-width: 1200px;
+  /* max-width: 1200px; */
+  width: 100%;
   border-radius: 10px;
 }
 .image-profile img{
@@ -98,8 +99,11 @@ body, html{
   
 }
 .comics{
-  max-width: 1200px;
+  /* max-width: 1200px; */
   padding-bottom: 200px;
+}
+.comics div div .card{
+  max-width: 235px;
 }
 
 /* commom */
