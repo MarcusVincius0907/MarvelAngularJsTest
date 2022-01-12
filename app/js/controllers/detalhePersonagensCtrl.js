@@ -7,14 +7,11 @@ angular.module("marvelApp")
 
         personagemService.getCharactersById($routeParams.id)
         .then(res => {
-          console.log('character',res)
           $scope.character = res.data.data.results[0]
-  
         }, error => console.log(error))
 
         personagemService.getComicsByCharacterId($routeParams.id)
         .then(res => {
-          console.log('comics',res)
           $scope.comics = res.data.data.results;
         }, error => console.log(error))
   

@@ -1,23 +1,18 @@
 angular.module("marvelApp")
-  .controller("listaPersonagensCtrl",  function($scope, $location,personagemService) {
+  .controller("listaPersonagensCtrl",  function($scope, $location,personagemService, loadingService) {
 
     $scope.app = "hello";
     $scope.characters = [];
 
+    $scope.totalItens = 1000;
+
     let init = () => {
 
       personagemService.getCharacters()
-      .then(res => {
-        
-        console.log(res)
+      .then(async (res) => {
         $scope.characters = res.data.data.results
-
-      }, error => console.log(error))
-
-      $scope.image =  $scope.getThumbnail({
-        path: "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784",
-        extension: "jpg"
-      })
+        $scope.totalItens = res.data.data.total
+      }, error => {console.log(error)})
 
       
     }
@@ -35,7 +30,15 @@ angular.module("marvelApp")
       $location.path(`/detail/${id}`)
     }
 
-    
+    $scope.paginate = (page) => {
+      personagemService.getCharactersPaginate(page)
+      .then(res => {
+        $scope.characters = res.data.data.results
+
+      }, error => {console.log(error)})
+    }
+
+    $scope.current = 2
 
     init()
 

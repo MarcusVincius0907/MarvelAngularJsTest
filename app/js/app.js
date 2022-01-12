@@ -1,1 +1,1 @@
-angular.module("marvelApp", ['angular-md5', 'ngRoute'])
+angular.module("marvelApp", ['angular-md5', 'ngRoute', 'angularUtils.directives.dirPagination'])

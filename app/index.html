@@ -19,9 +19,11 @@
     <script src="js/services/apiCredentials.js"></script>
     <script src="js/services/personagemService.js"></script>
     <script src="js/services/loginService.js"></script>
+    <script src="js/services/loadingService.js"></script>
     <script src="js/controllers/listaPersonagensCtrl.js"></script>
     <script src="js/controllers/detalhePersonagensCtrl.js"></script>
     <script src="js/controllers/loginCtrl.js"></script>
+    <script src="js/controllers/mainCtrl.js"></script>
     <script src="config/config.js"></script>
     <script src="config/routeConfig.js"></script>
 
@@ -36,8 +38,16 @@
     <title>Marvel App</title>
 
   </head>
-  <body>
-    <div class="wrapper">
+  <body ng-controller="mainCtrl">
+    <div class="overlay-spinner" ng-if="loading">
+      <div>
+        <img src="images/logoSpinner.png">
+        <div class="spinner-border text-danger" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper" ng-if="!loading">
       <div ng-include="'view/header.html'"></div>
       <div class="h-full" ng-view></div>
       <div ng-include="'view/footer.html'"></div>

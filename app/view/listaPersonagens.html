@@ -9,10 +9,10 @@
   </form>
 </div>
 <section class="main-section h-full">
-  <div class="d-flex px-2 px-sm-5  justify-content-center ">
+  <div class="d-flex px-2 px-sm-5 flex-column justify-content-center ">
     <div class="w-full d-flex flex-wrap justify-content-center ">
       
-      <div ng-repeat="ch in characters | filter:buscar" class="d-flex px-2 px-sm-1 pt-2">
+      <div dir-paginate="ch in characters | itemsPerPage:100 | filter:buscar" class="d-flex px-2 px-sm-1 pt-2" total-items="totalItens" current-page="current">
         <div ng-click="goToDetalhes(ch.id)" class="card">
           <img ng-src="{{getThumbnail(ch.thumbnail)}}" class="card-img-top" >
           <div class="card-body">
@@ -21,8 +21,10 @@
           </div>
         </div>
       </div>
+
       
     </div>
+    <dir-pagination-controls class="paginate" ng-click="paginate(current)"></dir-pagination-controls>
   </div>
   
 </section>
