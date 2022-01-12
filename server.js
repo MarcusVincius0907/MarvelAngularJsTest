@@ -5,12 +5,12 @@ const PORT = process.env.PORT || 3000;
 
 const fs = require("fs");
 
-app.use(express.static(__dirname));
+app.use(express.static(__dirname + '/app'));
 
 
 app.get('/', (req, res) => {
   
-  fs.readFile(__dirname + '/index.html', function (err, html) {
+  fs.readFile(__dirname+'/app/index.html', function (err, html) {
     if (err) {
         throw err; 
     }       
