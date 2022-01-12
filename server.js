@@ -10,7 +10,7 @@ app.use(express.static(__dirname));
 
 app.get('/', (req, res) => {
   
-  fs.readFile('./index.html', function (err, html) {
+  fs.readFile(__dirname + '/index.html', function (err, html) {
     if (err) {
         throw err; 
     }       
