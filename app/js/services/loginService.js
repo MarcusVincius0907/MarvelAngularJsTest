@@ -2,7 +2,9 @@ angular.module('marvelApp')
   .factory('loginService', function($http, $q, $location, config) {
 
     let _doLogin = (user) => {
-      return $http.post(`${config.authUrl}/login`, user)
+      //return $http.post(`${config.authUrl}/login`, user)
+      return {data:{status: 'OK', token: '123'}}
+      
     }
 
     let _authenticate = () => {

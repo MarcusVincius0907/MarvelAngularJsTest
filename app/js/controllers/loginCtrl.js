@@ -4,11 +4,15 @@ angular.module("marvelApp")
     $scope.app = "hello";
 
     $scope.doLogin = (user) => {
-      loginService.doLogin(user)
+      /* loginService.doLogin(user)
       .then(res => {
         localStorage.setItem('TOKEN', res.data.token)
         $location.path('/home')
-      }, error => console.log(error))
+      }) */
+
+      const res = loginService.doLogin(user)
+      localStorage.setItem('TOKEN', res.data.token)
+      $location.path('/home')
 
     }
 
