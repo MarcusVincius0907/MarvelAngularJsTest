@@ -10,11 +10,11 @@ body, html{
   font-family: bebas;
   height: 100%;
   background: linear-gradient(to bottom, #1f1f1f, #1b1a1a);
+  overflow: hidden;
 }
 
 .wrapper{
   height: 100%;
-  
 }
 
 .header, .footer {
@@ -79,6 +79,29 @@ body, html{
   border-top-right-radius: 10px;
 }
 
+.container-profile{
+  max-width: 1200px;
+  border-radius: 10px;
+}
+.image-profile img{
+  border-radius: 100%;
+}
+.info-profile{
+  max-width: 800px;
+}
+
+.info-profile h1{
+  font-size: 2em;
+}
+.comics h1{
+  color: white;
+  
+}
+.comics{
+  max-width: 1200px;
+  padding-bottom: 200px;
+}
+
 /* commom */
 .w-full{
   width: 100%;
@@ -98,6 +121,30 @@ body, html{
 
 .card:hover{
   opacity: 0.5;
+}
+
+.back{
+  color: white;
+  padding-top: 13px;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.login-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+}
+
+.login-container{
+  max-width: 500px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0 20px;
+  background-color: white;
 }
 
 /* scrollbar */

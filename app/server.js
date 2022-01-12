@@ -20,6 +20,10 @@ app.get('/', (req, res) => {
 });
 })
 
+app.post('/login', (req, res) => {
+  res.json({status: 'OK', token: '123'})
+})
+
 app.listen(PORT, () => {
   console.log(`Listening at http://localhost:${PORT}`)
 })

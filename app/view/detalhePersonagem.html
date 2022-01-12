@@ -1,1 +1,40 @@
-<div>hello</div>
+<section class="main-section h-full">
+  <div class="d-flex px-2 px-sm-5  justify-content-center ">
+    <div class="back" ng-click="goBack()">
+      <i class="fas fa-chevron-left"></i>
+    </div>
+    <div class="w-full mx-5 d-flex flex-wrap  ">
+      <!-- ch info -->
+      <div ng-if="character" class="mt-5 d-flex w-full flex-wrap flex-sm-nowrap justify-content-center container-profile bg-white" >
+        <div class="image-profile p-2">
+          <img style="max-width: 250px;" ng-src="{{getThumbnail(character.thumbnail)}}" class="card-img-top w-full" >
+        </div>
+        <div class=" info-profile p-2">
+          <h1>
+            {{character.name}}
+          </h1>
+          <div>
+            {{character.description}}
+          </div>
+        </div>
+      </div>
+
+      <div class="comics mt-5" ng-if="comics && comics.length > 0">
+        <h1>Comics List</h1>
+        <div class="w-full d-flex flex-wrap  " >
+          <div ng-repeat="comic in comics " class="d-flex px-2 px-sm-1 pt-2">
+            <div  class="card">
+              <img ng-src="{{getThumbnail(comic.thumbnail)}}" class="card-img-top" >
+              <div class="card-body">
+                <h5 class="card-title">{{comic.title}}</h5>
+                <p class="card-text">{{limitDesc(comic.description)}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</section>

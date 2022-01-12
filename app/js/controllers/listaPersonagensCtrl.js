@@ -1,5 +1,5 @@
 angular.module("marvelApp")
-  .controller("listaPersonagensCtrl",  function($scope, personagemService) {
+  .controller("listaPersonagensCtrl",  function($scope, $location,personagemService) {
 
     $scope.app = "hello";
     $scope.characters = [];
@@ -32,7 +32,7 @@ angular.module("marvelApp")
     }
 
     $scope.goToDetalhes = (id) => {
-      $location.path(`/detalhes/${id}`)
+      $location.path(`/detail/${id}`)
     }
 
     

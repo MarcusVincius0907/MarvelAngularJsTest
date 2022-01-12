@@ -13,8 +13,8 @@
     <div class="w-full d-flex flex-wrap justify-content-center ">
       
       <div ng-repeat="ch in characters | filter:buscar" class="d-flex px-2 px-sm-1 pt-2">
-        <div ng-click="goToDetalhes(ch.id)" class="card" ng-if="image">
-          <img ng-src="{{getThumbnail(ch.thumbnail)}}" class="card-img-top" alt="...">
+        <div ng-click="goToDetalhes(ch.id)" class="card">
+          <img ng-src="{{getThumbnail(ch.thumbnail)}}" class="card-img-top" >
           <div class="card-body">
             <h5 class="card-title">{{ch.name}}</h5>
             <p class="card-text">{{limitDesc(ch.description)}}</p>
