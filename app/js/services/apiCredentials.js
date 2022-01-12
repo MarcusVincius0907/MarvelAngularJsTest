@@ -1,12 +1,17 @@
 angular.module('marvelApp')
-  .factory('apiCredentials', ['md5', function(md5) {
-    var privateKey = 'fbf255068eccea6d0ef951b9f25626b57ab2fe72';
+  .factory('apiCredentials', function(md5, config) {
+
+    const ts = '1'
+
+    let _hashString = () => {
+      return md5.createHash(ts + config.privateKey + config.publicKey);
+    }
+
+    let _generateQueryString = () => {
+      return `?apikey=${config.publicKey}&ts=${ts}&hash=${_hashString()}`
+    }
 
     return {
-      key: '5a237863b3cc2061003cbbc4fe20dc06',
-      ts: '1',
-      hashString: function() {
-        return md5(this.ts + privateKey + this.key);
-      }
+      generateQueryStringCredential: _generateQueryString
     };
-  }]);
+  });

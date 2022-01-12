@@ -1,1 +1,1 @@
-angular.module("marvelApp", [])
+angular.module("marvelApp", ['angular-md5'])
