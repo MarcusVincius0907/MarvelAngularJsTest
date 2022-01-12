@@ -1,1 +1,1 @@
-angular.module("marvelApp", ['angular-md5'])
+angular.module("marvelApp", ['angular-md5', 'ngRoute'])

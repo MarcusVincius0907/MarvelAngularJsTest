@@ -6,22 +6,36 @@
   src: url(../font/Bebas-Regular.ttf);
 }
 
-body{
+body, html{
   font-family: bebas;
   height: 100%;
+  background: linear-gradient(to bottom, #1f1f1f, #1b1a1a);
 }
 
-
+.wrapper{
+  height: 100%;
+  
+}
 
 .header, .footer {
   background-color: #ec1d24;
   height:var(--defaultHeight);
 }
 
+.footer{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+
+.listaPersonagens{
+  height: 88.3%;
+  padding-bottom: 80px;
+}
 
 .main-section{
-  /* height: calc(100vh - (2 * var(--defaultHeight))); */
-  background: linear-gradient(to bottom, #1f1f1f, #1b1a1a);
+  
   overflow-y: auto;
 }
 
@@ -69,9 +83,40 @@ body{
 .w-full{
   width: 100%;
 }
+.h-full{
+  height: 100%;
+}
 
 /* bootstrap */
 
 .card{
   max-width: 240px;
+  max-height: 400px;
+  cursor: pointer;
+  background-color: #e5e5e5;
+}
+
+.card:hover{
+  opacity: 0.5;
+}
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* ::-webkit-scrollbar-track {
+  background: #555; 
+  padding:10px;
+  width: 15px;
+} */
+ 
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }

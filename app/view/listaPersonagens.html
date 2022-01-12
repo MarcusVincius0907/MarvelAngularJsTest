@@ -1,0 +1,29 @@
+
+<div class="search-bar p-2 d-flex justify-content-center">
+  <form class="search-bar-form">
+    <input ng-model="buscar" class="input-search" type="text" name="buscarPersonagem" id="buscar" placeholder="Which character are you looking for?">
+    <button type="submit">
+      <i class="fas fa-search"></i>
+    </button>
+    
+  </form>
+</div>
+<section class="main-section h-full">
+  <div class="d-flex px-2 px-sm-5  justify-content-center ">
+    <div class="w-full d-flex flex-wrap justify-content-center ">
+      
+      <div ng-repeat="ch in characters | filter:buscar" class="d-flex px-2 px-sm-1 pt-2">
+        <div ng-click="goToDetalhes(ch.id)" class="card" ng-if="image">
+          <img ng-src="{{getThumbnail(ch.thumbnail)}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ch.name}}</h5>
+            <p class="card-text">{{limitDesc(ch.description)}}</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</section>
+
